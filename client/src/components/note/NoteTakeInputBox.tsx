@@ -92,15 +92,15 @@ const NoteTakeInputBox = () => {
     };
 
     return (
-        <div className='flex items-center justify-center pt-3' ref={componentRef}
+        <div className='flex items-center justify-center min-h-24' ref={componentRef}
             onClick={handleComponentClick}
         >
-            <div className='p-2 w-[65%]  relative' >
+            <div className='p-2 w-[65%] relative' >
                 <input className={`border-2 outline-none absolute top-0 left-0 bg-transparent h-12 w-full pl-3 ${isExpanded ? "hidden" : "block"} `} type="text" placeholder="Enter your note here" />
 
                 <div className={`${isExpanded ? "block border-2 " : "hidden"}`} >
-                    <input value={noteInput.title} name='title' onChange={handleNoteChange} className='block m-2 outline-none w-full' type="text" placeholder='Title' />
-                    <input value={noteInput.content} name='content' onChange={handleNoteChange} ref={noteInputRef} className='block m-2 outline-none w-full' type="text" placeholder='Write your note...' />
+                    <input value={noteInput.title} autoComplete='off' name='title' onChange={handleNoteChange} className='block m-2 outline-none w-full' type="text" placeholder='Title' />
+                    <input value={noteInput.content} autoComplete='off' name='content' onChange={handleNoteChange} ref={noteInputRef} className='block m-2 outline-none w-full' type="text" placeholder='Write your note...' />
                 </div>
             </div>
         </div>
